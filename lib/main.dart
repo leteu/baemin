@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Palette.beaminPrimary,
-          fontFamily: 'Nanum_Gothic',
+          fontFamily: 'BMHANNA_11yrs',
           scaffoldBackgroundColor: const Color(0xFFF6F6F6)),
       home: const MainPage(title: 'Flutter Beamin clone coding'),
     );
@@ -54,9 +54,10 @@ class _MainPageState extends State<MainPage> {
                 const Text(
                   '송파구 위례성대로 2',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 2),
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Nanum_Gothic'
+                  ),
                   textScaleFactor: .8,
                 ),
                 IconButton(
