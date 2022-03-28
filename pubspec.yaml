@@ -100,10 +100,10 @@ flutter:
     - family: BMHANNA_11yrs
       fonts:
         - asset: assets/font/BMHANNA_11yrs/BMHANNA_11yrs.ttf
-    -family: BMHANNA_air
+    - family: BMHANNA_air
       fonts:
         - asset: assets/font/BMHANNA/BMHANNAAir.ttf
-    -family: BMHANNA_pro
+    - family: BMHANNA_pro
       fonts:
         - asset: assets/font/BMHANNA/BMHANNAPro.ttf
 
