@@ -157,6 +157,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   '쇼핑라이브',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
+                    fontFamily: 'BMHANNA_pro'
                   ),
                   textScaleFactor: 1.4,
                 ),
@@ -172,6 +173,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   '선물하기',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
+                    fontFamily: 'BMHANNA_pro'
                   ),
                   textScaleFactor: 1.4,
                 ),
@@ -187,6 +189,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   '전국별미',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
+                    fontFamily: 'BMHANNA_pro'
                   ),
                   textScaleFactor: 1.4,
                 ),
