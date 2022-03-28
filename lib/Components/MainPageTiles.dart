@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, import_of_legacy_library_into_null_safe
+// ignore_for_file: file_names, import_of_legacy_library_into_null_safe, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
