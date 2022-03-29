@@ -13,18 +13,26 @@ class MainPageTiles extends StatefulWidget {
 }
 
 class _MainPageTilesState extends State<MainPageTiles> {
+  final GlobalKey _square = GlobalKey();
+
+  _getWidth(GlobalKey key) {
+    if (key.currentContext != null) {
+      final RenderBox renderBox = key.currentContext!.findRenderObject() as RenderBox;
+      Size size = renderBox.size;
+      return size.width;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    double fullWidth = MediaQuery.of(context).size.width;
-    double halfWidth = fullWidth * .5;
-
     return Column(
       children: <Widget>[
         Row(
           children: [
             Expanded(
                 child: SizedBox(
-                    height: halfWidth,
+                    key: _square,
+                    height: _getWidth(_square),
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
@@ -44,7 +52,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
                     ))),
             Expanded(
                 child: SizedBox(
-                    height: halfWidth,
+                    height: _getWidth(_square),
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
@@ -69,34 +77,33 @@ class _MainPageTilesState extends State<MainPageTiles> {
         Row(
           children: [
             Expanded(
-                child: SizedBox(
-              height: halfWidth / 3,
               child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  elevation: 2,
-                  child: Column(
-                    children: const <Widget>[
-                      Text(
-                        '포장',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'BMHANNA_pro'),
-                        textScaleFactor: 3,
-                      ),
-                      Text('가까운 가게는 직접 가지러 가지요',
-                          style: TextStyle(fontWeight: FontWeight.w400),
-                          textScaleFactor: 1.5)
-                    ],
-                  )),
-            ))
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 2,
+                child: Column(
+                  children: const <Widget>[
+                    Text(
+                      '포장',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'BMHANNA_pro'),
+                      textScaleFactor: 3,
+                    ),
+                    Text('가까운 가게는 직접 가지러 가지요',
+                        style: TextStyle(fontWeight: FontWeight.w400),
+                        textScaleFactor: 1.5)
+                  ],
+                )
+              ),
+            )
           ],
         ),
         Row(
           children: [
             Expanded(
                 child: SizedBox(
-              height: halfWidth / 3,
+              height: _getWidth(_square) / 3,
               child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -115,7 +122,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
             )),
             Expanded(
                 child: SizedBox(
-              height: halfWidth / 3,
+              height: _getWidth(_square) / 3,
               child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -134,7 +141,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
             )),
             Expanded(
                 child: SizedBox(
-              height: halfWidth / 3,
+              height: _getWidth(_square) / 3,
               child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
@@ -157,7 +164,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
           children: [
             Expanded(
                 child: SizedBox(
-              height: halfWidth * 0.75,
+              height: _getWidth(_square) * 0.75,
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
@@ -171,7 +178,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
           children: [
             Expanded(
               child: SizedBox(
-                height: halfWidth / 3,
+                height: _getWidth(_square) / 3,
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
