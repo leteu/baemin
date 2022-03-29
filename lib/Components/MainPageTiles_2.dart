@@ -74,24 +74,25 @@ class _MainPageTilesState extends State<MainPageTiles> {
           ),
         ),
         Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            elevation: 2,
-            child: Column(
-              children: const <Widget>[
-                Text(
-                  '포장',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'BMHANNA_pro'
-                  ),
-                  textScaleFactor: 3,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          elevation: 2,
+          child: Column(
+            children: const <Widget>[
+              Text(
+                '포장',
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'BMHANNA_pro'
                 ),
-                Text('가까운 가게는 직접 가지러 가지요',
-                    style: TextStyle(fontWeight: FontWeight.w400),
-                    textScaleFactor: 1.5)
-              ],
-            )),
+                textScaleFactor: 3,
+              ),
+              Text('가까운 가게는 직접 가지러 가지요',
+                  style: TextStyle(fontWeight: FontWeight.w400),
+                  textScaleFactor: 1.5)
+            ],
+          )
+        ),
         Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -148,21 +149,22 @@ class _MainPageTilesState extends State<MainPageTiles> {
               ],
             )),
         Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            elevation: 2,
-            child: Column(
-              children: const <Widget>[
-                Text(
-                  '쇼핑라이브',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'BMHANNA_pro'
-                  ),
-                  textScaleFactor: 1.4,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          elevation: 2,
+          child: Column(
+            children: const <Widget>[
+              Text(
+                '쇼핑라이브',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'BMHANNA_pro'
                 ),
-              ],
-            )),
+                textScaleFactor: 1.4,
+              ),
+            ],
+          )
+        ),
         Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -178,7 +180,8 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   textScaleFactor: 1.4,
                 ),
               ],
-            )),
+            )
+        ),
         Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -194,7 +197,8 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   textScaleFactor: 1.4,
                 ),
               ],
-            )),
+            )
+        ),
       ],
     );
   }

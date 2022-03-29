@@ -50,25 +50,27 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             Center(
-                child: Row(
-              children: [
-                const Text(
-                  '송파구 위례성대로 2',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Nanum_Gothic'
+              child: Row(
+                children: [
+                  const Text(
+                    '송파구 위례성대로 2',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Nanum_Gothic'
+                    ),
+                    textScaleFactor: .8,
                   ),
-                  textScaleFactor: .8,
-                ),
-                IconButton(
+                  IconButton(
                     onPressed: () {},
                     icon: const Icon(
                       Icons.expand_more,
                       color: Colors.white,
-                    )),
-              ],
-            )),
+                    )
+                  ),
+                ],
+              )
+            ),
             Row(children: [
               IconButton(
                   onPressed: () {},
@@ -94,6 +96,11 @@ class _MainPageState extends State<MainPage> {
       ),
       body: ListView(
         shrinkWrap: true,
+        padding: const EdgeInsets.only(
+          top: 15,
+          left: 20,
+          right: 20
+        ),
         children: const <Widget>[
           MainPageTiles()
         ]
