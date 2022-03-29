@@ -15,14 +15,6 @@ class MainPageTiles extends StatefulWidget {
 class _MainPageTilesState extends State<MainPageTiles> {
   final GlobalKey _square = GlobalKey();
 
-  _getWidth(GlobalKey key) {
-    if (key.currentContext != null) {
-      final RenderBox renderBox = key.currentContext!.findRenderObject() as RenderBox;
-      Size size = renderBox.size;
-      return size.width;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,10 +22,9 @@ class _MainPageTilesState extends State<MainPageTiles> {
         Row(
           children: [
             Expanded(
-                child: SizedBox(
-                    key: _square,
-                    height: _getWidth(_square),
-                    child: Card(
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
                       elevation: 2,
@@ -49,10 +40,12 @@ class _MainPageTilesState extends State<MainPageTiles> {
                               textScaleFactor: 1.5)
                         ],
                       ),
-                    ))),
+                    )
+              ),
+            ),
             Expanded(
-                child: SizedBox(
-                    height: _getWidth(_square),
+                child: AspectRatio(
+                    aspectRatio: 1,
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
@@ -178,7 +171,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
           children: [
             Expanded(
                 child: SizedBox(
-              height: _getWidth(_square),
+              height: 50,
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
