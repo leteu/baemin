@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, import_of_legacy_library_into_null_safe, unused_import
+// ignore_for_file: file_names, import_of_legacy_library_into_null_safe, unused_import, unnecessary_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
