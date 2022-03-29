@@ -81,19 +81,23 @@ class _MainPageTilesState extends State<MainPageTiles> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
                 elevation: 2,
-                child: Column(
-                  children: const <Widget>[
-                    Text(
-                      '포장',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'BMHANNA_pro'),
-                      textScaleFactor: 3,
-                    ),
-                    Text('가까운 가게는 직접 가지러 가지요',
-                        style: TextStyle(fontWeight: FontWeight.w400),
-                        textScaleFactor: 1.5)
-                  ],
+                child: Container(
+                  padding: const EdgeInsets.all(4),
+                  margin: const EdgeInsets.all(4),
+                  child: Column(
+                    children: const <Widget>[
+                      Text(
+                        '포장',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'BMHANNA_pro'),
+                        textScaleFactor: 3,
+                      ),
+                      Text('가까운 가게는 직접 가지러 가지요',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                          textScaleFactor: 1.5)
+                    ],
+                  )
                 )
               ),
             )
@@ -102,31 +106,36 @@ class _MainPageTilesState extends State<MainPageTiles> {
         Row(
           children: [
             Expanded(
-                child: SizedBox(
-              height: _getWidth(_square) / 3,
-              child: Card(
+                child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 2,
-                  child: Column(
-                    children: const <Widget>[
-                      Text(
-                        '쇼핑라이브',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'BMHANNA_pro'),
-                        textScaleFactor: 1.4,
-                      ),
-                    ],
-                  )),
-            )),
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(5),
+                    child: Column(
+                      children: const <Widget>[
+                        Text(
+                          '쇼핑라이브',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'BMHANNA_pro'),
+                          textScaleFactor: 1,
+                        ),
+                      ],
+                    )
+                  )
+                )
+            ),
+            
             Expanded(
-                child: SizedBox(
-              height: _getWidth(_square) / 3,
               child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  elevation: 2,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 2,
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(5),
                   child: Column(
                     children: const <Widget>[
                       Text(
@@ -134,18 +143,21 @@ class _MainPageTilesState extends State<MainPageTiles> {
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontFamily: 'BMHANNA_pro'),
-                        textScaleFactor: 1.4,
+                        textScaleFactor: 1,
                       ),
                     ],
-                  )),
-            )),
+                  ),
+                )
+              )
+            ),
             Expanded(
-                child: SizedBox(
-              height: _getWidth(_square) / 3,
               child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  elevation: 2,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 2,
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(5),
                   child: Column(
                     children: const <Widget>[
                       Text(
@@ -153,18 +165,20 @@ class _MainPageTilesState extends State<MainPageTiles> {
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontFamily: 'BMHANNA_pro'),
-                        textScaleFactor: 1.4,
+                        textScaleFactor: 1,
                       ),
                     ],
-                  )),
-            ))
+                  )
+                )
+              )
+            )
           ],
         ),
         Row(
           children: [
             Expanded(
                 child: SizedBox(
-              height: _getWidth(_square) * 0.75,
+              height: _getWidth(_square),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
@@ -177,9 +191,7 @@ class _MainPageTilesState extends State<MainPageTiles> {
         Row(
           children: [
             Expanded(
-              child: SizedBox(
-                height: _getWidth(_square) / 3,
-                child: Card(
+              child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 2,
@@ -193,11 +205,23 @@ class _MainPageTilesState extends State<MainPageTiles> {
                                 color: Colors.grey,
                                 width: .25
                               )
-                            )
+                            ),
                           ),
                           child: TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.black87,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(0),
+                                  bottomRight: Radius.circular(0),
+                                  topLeft: Radius.circular(8),
+                                  bottomLeft: Radius.circular(8),
+                                )
+                              ),
+                            ),
                             child: Column(
                               children: const [
+                                Icon(Icons.paid_outlined),
                                 Text('포인트')
                               ],
                             ),
@@ -216,9 +240,15 @@ class _MainPageTilesState extends State<MainPageTiles> {
                             )
                           ),
                           child: TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.black87,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(0)))
+                            ),
                             child: Column(
                               children: const [
-                                Text('포인트')
+                                Icon(Icons.confirmation_num_outlined),
+                                Text('쿠폰함')
                               ],
                             ),
                             onPressed: () {},
@@ -236,9 +266,15 @@ class _MainPageTilesState extends State<MainPageTiles> {
                             )
                           ),
                           child: TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.black87,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(0)))
+                            ),
                             child: Column(
                               children: const [
-                                Text('포인트')
+                                Icon(Icons.redeem),
+                                Text('선물함')
                               ],
                             ),
                             onPressed: () {},
@@ -247,9 +283,21 @@ class _MainPageTilesState extends State<MainPageTiles> {
                       ),
                       Expanded(
                         child: TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black87,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(8),
+                                bottomRight: Radius.circular(8),
+                                topLeft: Radius.circular(0),
+                                bottomLeft: Radius.circular(0),
+                              )
+                            ),
+                          ),
                           child: Column(
                             children: const [
-                              Text('포인트')
+                              Icon(Icons.favorite_border),
+                              Text('찜')
                             ],
                           ),
                           onPressed: () {},
@@ -258,7 +306,6 @@ class _MainPageTilesState extends State<MainPageTiles> {
                     ],
                   )
                 ),
-              ),
             )
           ],
         )
