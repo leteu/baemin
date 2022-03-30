@@ -51,49 +51,20 @@ class _MainPageTilesState extends State<MainPageTiles> {
                           borderRadius: BorderRadius.circular(8)),
                       elevation: 2,
                       child: Column(
-                        children: const [
+                        children: const <Widget>[
                           Text(
-                            '배민1',
+                            '포장',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontFamily: 'BMHANNA_pro'),
                             textScaleFactor: 2.7,
                           ),
-                          Text('한 번에 한 집만\n빠르게 배달해요!',
+                          Text('가까운 가게는 직접 가지러 가지요',
                               style: TextStyle(fontWeight: FontWeight.w400),
                               textScaleFactor: 1.5)
                         ],
                       ),
                     )))
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
-                elevation: 2,
-                child: Container(
-                  padding: const EdgeInsets.all(4),
-                  margin: const EdgeInsets.all(4),
-                  child: Column(
-                    children: const <Widget>[
-                      Text(
-                        '포장',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'BMHANNA_pro'),
-                        textScaleFactor: 3,
-                      ),
-                      Text('가까운 가게는 직접 가지러 가지요',
-                          style: TextStyle(fontWeight: FontWeight.w400),
-                          textScaleFactor: 1.5)
-                    ],
-                  )
-                )
-              ),
-            )
           ],
         ),
         Row(
