@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:math' as math;
 
 class MainPageTiles extends StatefulWidget {
@@ -13,6 +14,16 @@ class MainPageTiles extends StatefulWidget {
 }
 
 class _MainPageTilesState extends State<MainPageTiles> {
+  List<Widget> adsens = [
+    Image.asset("assets/images/adsens_1.png"),
+    Image.asset("assets/images/adsens_2.png"),
+    Image.asset("assets/images/adsens_3.png"),
+    Image.asset("assets/images/adsens_4.png"),
+    Image.asset("assets/images/adsens_5.png"),
+  ];
+
+  int currentAdsens = 1;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,21 +34,31 @@ class _MainPageTilesState extends State<MainPageTiles> {
               child: AspectRatio(
                 aspectRatio: 1,
                 child: Card(
+                      clipBehavior: Clip.hardEdge,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
                       elevation: 2,
-                      child: Column(
-                        children: const [
-                          Text('배달',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontFamily: 'BMHANNA_pro'),
-                              textScaleFactor: 2.7),
-                          Text('세상은 넓고\n맛집은 많다',
-                              style: TextStyle(fontWeight: FontWeight.w400),
-                              textScaleFactor: 1.5)
-                        ],
-                      ),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/baedal.png'), // 배경 이미지
+                          ),
+                        ),
+                        child: Column(
+                          children: const [
+                            Text('배달',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'BMHANNA_pro'),
+                                textScaleFactor: 2.7),
+                            Text('세상은 넓고\n맛집은 많다',
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                                textScaleFactor: 1.5)
+                          ],
+                        ),
+                      )
+                      
                     )
               ),
             ),
@@ -45,23 +66,32 @@ class _MainPageTilesState extends State<MainPageTiles> {
                 child: AspectRatio(
                     aspectRatio: 1,
                     child: Card(
+                      clipBehavior: Clip.hardEdge,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
                       elevation: 2,
-                      child: Column(
-                        children: const <Widget>[
-                          Text(
-                            '포장',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'BMHANNA_pro'),
-                            textScaleFactor: 2.7,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/pojang.png'), // 배경 이미지
                           ),
-                          Text('가까운 가게는 직접 가지러 가지요',
-                              style: TextStyle(fontWeight: FontWeight.w400),
-                              textScaleFactor: 1.5)
-                        ],
-                      ),
+                        ),
+                        child: Column(
+                          children: const <Widget>[
+                            Text(
+                              '포장',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'BMHANNA_pro'),
+                              textScaleFactor: 2.7,
+                            ),
+                            Text('가까운 가게는 직접 가지러 가지요',
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                                textScaleFactor: 1.5)
+                          ],
+                        ),
+                      )
                     )))
           ],
         ),
@@ -76,8 +106,9 @@ class _MainPageTilesState extends State<MainPageTiles> {
                     padding: const EdgeInsets.all(5),
                     margin: const EdgeInsets.all(5),
                     child: Column(
-                      children: const <Widget>[
-                        Text(
+                      children: <Widget>[
+                        Image.asset('assets/icon/shop_live.png'),
+                        const Text(
                           '쇼핑라이브',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -99,8 +130,9 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   padding: const EdgeInsets.all(5),
                   margin: const EdgeInsets.all(5),
                   child: Column(
-                    children: const <Widget>[
-                      Text(
+                    children: <Widget>[
+                      Image.asset('assets/icon/gift.png'),
+                      const Text(
                         '선물하기',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
@@ -121,8 +153,9 @@ class _MainPageTilesState extends State<MainPageTiles> {
                   padding: const EdgeInsets.all(5),
                   margin: const EdgeInsets.all(5),
                   child: Column(
-                    children: const <Widget>[
-                      Text(
+                    children: <Widget>[
+                      Image.asset('assets/icon/delicacy.png'),
+                      const Text(
                         '전국별미',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
@@ -139,15 +172,65 @@ class _MainPageTilesState extends State<MainPageTiles> {
         Row(
           children: [
             Expanded(
-                child: SizedBox(
-              height: 50,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
-                elevation: 2,
-                child: const Center(child: Text('광고자리')),
+              child: SizedBox(
+                child: Card(
+                  clipBehavior: Clip.hardEdge,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  elevation: 2,
+                  child: Stack(
+                    children: [
+                      CarouselSlider(
+                        items: adsens.map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8)
+                                ),
+                                child: i,
+                              );
+                            },
+                          );
+                        }).toList(),
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          viewportFraction: 1,
+                          height: 114,
+                          onPageChanged: (int idx, item) {
+                            setState(() {
+                              currentAdsens = idx+1;
+                            });
+                          }
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        right: 10,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color.fromRGBO(0, 0, 0, .5),
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+
+                            top: 4,
+                            bottom: 4
+                          ),
+                          child: Text(
+                            '$currentAdsens / 5  모두보기',
+                            style: const TextStyle(color: Colors.white, fontFamily: 'Nanum_Gothic'),
+                            textScaleFactor: .75,
+                          ),
+                        )
+                      )
+                    ],
+                  )
+                ),
               ),
-            ))
+            )
           ],
         ),
         Row(
