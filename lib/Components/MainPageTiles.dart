@@ -13,8 +13,6 @@ class MainPageTiles extends StatefulWidget {
 }
 
 class _MainPageTilesState extends State<MainPageTiles> {
-  final GlobalKey _square = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Column(
